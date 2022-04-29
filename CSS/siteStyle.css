@@ -1,0 +1,37 @@
+body{
+    background-color: lightgreen;
+    font-family: Helvetica;
+    line-height: 1.5;
+}
+
+body a{
+    text-decoration: none;
+    color: black
+}
+
+.Top{
+    display: block;
+    position: initial;
+    background-color: lightseagreen;
+    margin-bottom: 0;
+}
+
+body a:hover{
+    font-size: large;
+    border-bottom-style: solid;
+    color:lightsteelblue
+}
+
+.Top #logo:hover{
+    transform: scale(1.05);
+}
+
+.Top{
+    display: flex;
+}
+.Top h1{
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 605px;
+}
