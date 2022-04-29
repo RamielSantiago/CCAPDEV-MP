@@ -1,0 +1,39 @@
+.makepost{
+    border-radius: 25px;
+    background-color: white;
+    padding: 25px;
+    width: 40%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    box-shadow: 25px;
+}
+
+input[type="text"]{
+  width: 70%;
+  margin: 8px 0;
+  padding: 12px 20px;
+  display: inline-block;
+  box-sizing: border-box;
+}
+input[type="submit"]{
+    background-color: #7868e6;
+    width: 70%;
+    color: #edeef7;
+    padding: 15px;
+    margin: 10px 0px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(to top right, #b8b5ff 0%, #7868e6 74%);
+}
+textarea{
+    width: 90%;
+}
+.postinput #postcontent{
+    height: 30%;
+}
+
+label{
+    float: left;
+}
