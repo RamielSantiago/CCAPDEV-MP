@@ -15,19 +15,25 @@ div.navigation {
 	background-color: rgb(24, 23, 23);
 	text-align: center;
 }
+.navigation a:link{
+    text-decoration: none;
+}
+#proBtn{
+    float:right;
+    padding-top: 15px;
+    margin-right: 15px;
+    font-size: 25px;
+	font-family: cursive;
+}
 #LR{
     float: left;
     padding-top: 15px;
     margin-left: 15px;
-    padding-right: 50px;
     font-size: 25px;
 	font-family: cursive;
 }
-#LR a{
+#LR a, #proBtn a{
     color: darkcyan;
-}
-#LR a:link{
-    text-decoration: none;
 }
 #LR a:hover{
     transform: scale(1.1);
@@ -40,8 +46,5 @@ div.navigation {
 	color: white;
     margin: 0 auto;
     padding-right: 160px;
-    text-decoration: none;
-}
-.navigation-title a:link{
     text-decoration: none;
 }
