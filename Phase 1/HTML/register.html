@@ -6,18 +6,39 @@
     <link rel="stylesheet" href="../CSS/siteStyle.css">
     <link rel="stylesheet" href="../CSS/register.css">
 </head>    
-<body>    
-    <form id = "register">   
-        <div class="container">
-            <h1> Register </h1>   
-            <input type="text" placeholder="First Name" name="firstname" required>  
-            <input type="text" placeholder="Last Name" name="lastname" required>
-            <input type="email" placeholder="Email" name="email" required>
-            <input type="text" placeholder="Username" name="username" required>
-            <input type="password" placeholder="Password" name="password1" required>
-            <input type="password" placeholder="Confirm Password" name="password2" required> 
-            <input type="submit" value = "Create Account">
-        </div>   
-    </form>     
-</body>     
+<body>
+	<div class = "navigation">
+		<span id="LR">			
+			<a href="login.html">Login</a>
+		</span>
+		<h1 class = "navigation-title"> Socrates </h1>
+	</div>    
+	<div class="container">
+   		<form id = "register">   
+				<h1> Socrates </h1>
+            	<h2> Register </h2>   
+				<div class = "text_container">
+					<input type="text" placeholder="First Name" name="firstname" id="firstname" required>  
+				</div>
+				<div class = "text_container">
+					<input type="text" placeholder="Last Name" name="lastname" id="lastname" required>
+				</div>
+				<div class = "text_container">
+					<input type="email" placeholder="Email" name="email" id="email" required>
+				</div>
+				<div class = "text_container">
+				<input type="text" placeholder="Username" name="username" id="username" required>
+				</div>
+				<div class = "text_container">
+					<input type="password" placeholder="Password" name="password1" id="password1" required>
+				</div>
+				<div class = "text_container">
+					<input type="password" placeholder="Confirm Password" name="password2" id="password2" required> 
+				</div>
+    		</form>  
+			<p id="errorText"></p>
+			<button id="submitBtn">Create Account</button>   
+		</div> 
+		<script src="../Javascript/register.js"></script>  
+	</body>     
 </html>  
