@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home Page</title>
+		<link rel="stylesheet" href="../CSS/homepage.css">
+		<link rel="stylesheet" href="../CSS/siteStyle.css">
+    </head>
+    <body>
+		<div class = "navigation">
+			<span id="LR">			
+				<a href="login.html">Login</a>
+				<a href="register.html">Register</a>
+			</span>
+			<div id="proBtn"><a href="https://www.google.com/">Profile</a></div>
+			<h1 class = "navigation-title">Socrates</h1>
+		</div>
+		<div class="writebutton">
+			 <button id="popup">Create Post</button>
+		</div>
+		<div class = "writePosts">
+			<div id="close">
+				<button id="closeBtn">X</button>
+			</div>
+			<div class = "writePostsDiv">
+				<h1 class = "divName"> Write Posts </h1>
+				<hr class = "hline">
+			</div>
+			<div class = "container">
+				<form id="postForm">
+					<div class="auxTitle">
+						<h6 class="descName"> Post's Title </h6>
+						<br>
+						<textarea id="postTitle" name="postTitle" placeholder="Enter Post's Title" required></textarea>
+					</div>
+					<div class="auxInfo">
+						<h6 class="descName"> Post </h6>
+						<br>
+						<textarea rows="100" cols = "40" id="desc" name ="desc" placeholder="Enter your post here" required></textarea>
+					</div>
+				</form>
+				<div class="writebutton">
+					<button id = "postSubmit">Submit</button>
+				</div>
+			</div>
+		</div>
+	<div class="posts">
+		<div class = "postsContainer">
+			<div class = "postNameDiv">
+				<h1 class = "divName"> Posts </h1>
+				<hr class = "hline">
+			</div>
+	</div>  
+		<script src="../Javascript/posts.js"></script>
+    </body>
+</html>
