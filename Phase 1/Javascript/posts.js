@@ -1,3 +1,5 @@
+var likeButton;
+
 document.getElementById("popup").addEventListener("click", function(){
     document.querySelector(".writePosts").classList.add("active");
     document.querySelector("#popup").style.display="none";
@@ -33,6 +35,8 @@ function Post (name, topic, content, photo) {
     let comment = document.createElement('span');
     let save = document.createElement('span');
     let contents = document.createElement('span');
+	let upvote = document.createElement('span');
+	let downvote = document.createElement('span');
 	let picInfo = document.createElement('div');
 	let picture = document.createElement('img');
 	
@@ -50,12 +54,16 @@ function Post (name, topic, content, photo) {
     like.setAttribute('class', 'like');
     comment.setAttribute('class', 'comment');
     save.setAttribute('class', 'save');
+	upvote.setAttribute('class', 'upvote');
+	downvote.setAttribute('class', 'downvote');
 	picInfo.setAttribute('class', 'imageCon');
 	picture.setAttribute('class', 'image');
 	
     actions.appendChild(like);
     actions.appendChild(comment);
     actions.appendChild(save);
+	actions.appendChild(upvote);
+	actions.appendChild(downvote);
     buttons.appendChild(actions);
 	
     headerName.innerHTML = name;
@@ -77,6 +85,7 @@ function Post (name, topic, content, photo) {
     container.appendChild(header);
     container.appendChild(footer);
     postsHere[0].insertBefore(container, postsHere[1]);
+	
     initializeList();
 }
 
@@ -215,6 +224,6 @@ samplePosts();
 initializeList();
 
 /*TODO: Problem */
-document.getElementsByClassName("like").onclick = function click() {
+document.getElementsById("likeBtn").onclick = function click() {
 	
 };
