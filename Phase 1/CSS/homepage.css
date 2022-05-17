@@ -171,15 +171,32 @@ span.save {
 	margin: 8px 4px 8px 0px;
 }
 
-span.like:hover {
-	opacity: 50%;
+span.upvote {
+	display: inline-block;
+	background-image: url("../images/sprites2.png");
+	background-size: 411px 393px;
+	background-position: -175px -255px;
+	background-repeat: no-repeat;
+	height: 24px;
+	width: 24px;
+	margin: 8px 4px 8px 0px;
+	float:right;
 }
 
-span.comment:hover {
-	opacity: 50%;
+span.downvote {
+	display: inline-block;
+	background-image: url("../images/sprites2.png");
+	background-size: 411px 393px;
+	background-position: -275px -255px;
+	background-repeat: no-repeat;
+	height: 24px;
+	width: 24px;
+	margin: 8px 4px 8px 0px;
+	float:right;
 }
 
-span.save:hover {
+span.like:hover, span.comment:hover, span.save:hover, 
+span.upvote:hover, span.downvote:hover{
 	opacity: 50%;
 }
 
