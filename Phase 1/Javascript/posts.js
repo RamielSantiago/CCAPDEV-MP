@@ -1,5 +1,3 @@
-var likeButton;
-
 document.getElementById("popup").addEventListener("click", function(){
     document.querySelector(".writePosts").classList.add("active");
     document.querySelector("#popup").style.display="none";
@@ -85,7 +83,7 @@ function Post (name, topic, content, photo) {
     container.appendChild(header);
     container.appendChild(footer);
     postsHere[0].insertBefore(container, postsHere[1]);
-	
+
     initializeList();
 }
 
@@ -223,7 +221,23 @@ function samplePosts() {
 samplePosts();
 initializeList();
 
-/*TODO: Problem */
-document.getElementsById("likeBtn").onclick = function click() {
-	
-};
+var likeButtons = [].slice.call(document.getElementsByClassName("like"));
+var likeClicked = [likeButtons.length];
+var likeCount = [likeButtons.length];
+
+function liked(element, index) {
+	if (!likeClicked[index]) {
+		element.setAttribute('class', 'likeUser');
+		likeClicked[index] = true;
+		likeCount[index] += 1; 
+	}
+	else {
+		element.setAttribute('class', 'like');
+		likeClicked[index] = false;
+		likeCount[index] -= 1;
+	}
+}
+
+likeButtons.forEach(function(element,index) { 
+	element.addEventListener("click", (evt) => liked(element, index));
+});
