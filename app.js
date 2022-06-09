@@ -1,3 +1,4 @@
+//-----------------------MongoDB connection---------------------------//
 const dotenv = require('dotenv');
 dotenv.config();
 const conn = require('./db/conn.js');
@@ -18,14 +19,14 @@ conn.connectToMongo((err) => {
      });
 });
 
+//Declaring dependencies
 const http = require('http');
 const path = require('path');
 const express = require('express');
 const favicon = require('express-favicon');
 const exphbs = require('express-handlebars');
-//const session = require('express-session');
 const app = express();
-const port = 3000;
+const port = 3000; //Port number
 
 //Sets app to use static files for displays
 app.use(express.static(__dirname + "/public"));
@@ -57,7 +58,6 @@ app.get('/register', (req, res) => {
         customCSS: '<link rel="stylesheet" href="CSS/register.css">'
     });
 });
-
 //Sets the port to listen to
 app.listen(port, () => {
     console.log("Currently listening at Port " + port);
