@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             var url = `/addUser?firstname=${firstname.value}&lastname=${lastname.value}&email=${email.value}&username=${username.value}&password1=${password1.value}}&password2=${password2.value}`;
 			
 			$.get(url, (data, status, xhr) => {
+                alert(status);
                 if (status == "success") {
                     console.log("HELLO");
                 }

@@ -52,7 +52,6 @@ const controller = {
 		console.log("Hello3");
 		db.insertOne(Register, req.query, (data) => {
 			console.log("User Added");
-            alert("User Added");
 		});
     },
 	

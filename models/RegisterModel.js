@@ -34,4 +34,5 @@ const RegisterSchema = new mongoose.Schema({
 		}
 });
 
-module.exports = mongoose.model('Register', RegisterSchema);
+const RegModel = mongoose.model('Register', RegisterSchema)
+module.exports = RegModel;

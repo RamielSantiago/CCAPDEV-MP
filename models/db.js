@@ -2,7 +2,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 const mongoose = require('mongoose');
 
-const url = process.env.MONGODB_URI;
+const url = process.env.ONLINE_URL;
 
 const options = {
     useUnifiedTopology: true,

@@ -11,7 +11,7 @@ app.get('/register', controller.loadRegister);
 
 //-------- Register Actions ---------//
 app.get('/getCheckUsername', controller.getCheckUsername);
-app.post('/addUser', controller.getAdd);
+app.get('/addUser', controller.getAdd);
 
 //-------- Login Checking ----------//
 app.post('/CheckLogin', controller.CheckLogin);
