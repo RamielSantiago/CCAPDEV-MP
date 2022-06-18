@@ -12,7 +12,7 @@ Content of the .env file:
         ONLINE_URL=mongodb+srv://Admin:C0tDKeQ0wr9XXSxy@ccapdev.zzznx.mongodb.net/CCAPDEV?retryWrites=true&w=majority
         SERVER_PORT=3000
         
-        -> To enable the connection to the online database, copy and paste the lines above into your .env file and replace the url in the db.js from the loaclhost 
+        -> To enable the connection to the online database, copy and paste the lines above into your .env file and replace the url in the db.js from the localhost 
         one to the one under ONLINE_URL. MONGO_URI is there cause we still need the local connection for now, but in Phase 3, it will change to the online completely.
         
         Example (given dotenv is installed):
