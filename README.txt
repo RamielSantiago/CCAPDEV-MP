@@ -1,5 +1,9 @@
+For Phase 2:
+        The current version of all the files in this branch has everything up to the Registration feature implemented by Noel and the Login feature implemented 
+        by Ram. DB runs fine and there's no issue with adding and retrieveing data, so it's perfectly servicable for now.
+
 For Phase 3:
-        The specs say that we need to deploy the application to somethign like Heroku, and for that we need to transition from a local to an online database.
+        The specs say that we need to deploy the application to something like Heroku, and for that we need to transition from a local to an online database.
         I've taken care of that somewhat by creating the connection to an online MongoDB database in my own account, but for now, the code in this branch still
         uses the localhost MongoDB database.
         
