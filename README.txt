@@ -22,7 +22,7 @@ Content of the .env file:
 
           const url = process.env.MONGODB_URI;
         
-        If dotenv isn't installed:
+        If dotenv isn't installed, and there's no .env file:
                 const mongoose = require('mongoose');
 
                 const url = '=mongodb+srv://Admin:C0tDKeQ0wr9XXSxy@ccapdev.zzznx.mongodb.net/CCAPDEV?retryWrites=true&w=majority';
