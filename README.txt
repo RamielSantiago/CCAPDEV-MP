@@ -31,4 +31,9 @@ Content of the .env file:
 About the online MongoDB:
           I've tested it out a bit, and it seems that the controller doesn't add any new documents to the database, so the controller may need an overhaul to fully
           transition to the online DB.
+          
+          CORRECTION:
+                I managed to get it to work somehow. I only edited the RegisterModel.js to have the schema model 'Register' assigned to a variable and exported it.
+                Don't know how exactly that amde it work, but it does now. It's possible for us to ditch the local db now at this point as there's no difference 
+                between how the online and local work. It's just that one is on the cloud, and is required for phase 3.
         
