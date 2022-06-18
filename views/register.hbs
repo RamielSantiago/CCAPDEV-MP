@@ -1,13 +1,23 @@
-	<div class = "navigation">
-		<span id="LR">			
-			<a href="/login">Login</a>
-		</span>
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Register </title>
+    <link rel="stylesheet" href="CSS/siteStyle.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="/css/register.css">
+	<script type="text/javascript" src="/js/register.js"></script>
+</head>
+<body>
+<div class = "navigation">
+	<span id="LR">			
+		<a href="/login">Login</a>
+	</span>
 		<h1 class = "navigation-title"><a href="/homepage">Socrates</a></h1>
-	</div>    
-	<div class="container">
-   		<form id = "register">   
-				<h1> Socrates </h1>
-            	<h2> Register </h2>   
+</div>    
+<div class="container">
+   	<form id = "register">   
+		<h1> Socrates </h1>
+           	<h2> Register </h2>   
 				<div class = "text_container">
 					<input type="text" placeholder="First Name" name="firstname" id="firstname" required>  
 				</div>
@@ -26,8 +36,9 @@
 				<div class = "text_container">
 					<input type="password" placeholder="Confirm Password" name="password2" id="password2" required> 
 				</div>
-    		</form>  
-			<p id="errorText"></p>
-			<button id="submitBtn">Create Account</button>   
-		</div> 
-		<script src="../Javascript/register.js"></script>  
+    </form>  
+		<p id="errorText"></p>
+		<button id="submitBtn">Create Account</button>   
+</div>
+</body>
+</html>

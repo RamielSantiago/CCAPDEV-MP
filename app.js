@@ -4,7 +4,7 @@ const express = require('express');
 const favicon = require('express-favicon');
 const exphbs = require('express-handlebars');
 const routes = require('./routes/routes.js');
-const mongodb = require('mongodb');
+const db = require('./models/db.js');
 const app = express();
 const port = 3000; //Port number
 
@@ -18,6 +18,9 @@ app.use(`/`, routes);
 app.engine("hbs", exphbs.engine({extname: 'hbs'})); 
 app.set("view engine", "hbs");
 app.set("views", "./views");
+
+//Database Connection
+db.connect();
 
 //Sets the port to listen to
 app.listen(port, () => {

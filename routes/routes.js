@@ -1,10 +1,18 @@
 const express = require('express');
-const controller = require('../controllers/controllers.js');
-const router = express.Router();
+const controller = require('../controllers/controller.js');
 
-router.get('/', controller.redirectHP);
-router.get('/homepage', controller.loadHP);
-router.get('/login', controller.loadLogin);
-router.get('/register', controller.loadRegister);
+const app = express.Router();
 
-module.exports = router;
+//-------- Webpages ----------//
+app.get('/', controller.redirectHP);
+app.get('/homepage', controller.loadHP);
+app.get('/login', controller.loadLogin);
+app.get('/register', controller.loadRegister);
+
+//-------- Register Actions ---------//
+app.get('/getCheckUsername', controller.getCheckUsername);
+app.post('/addUser', controller.getAdd);
+
+//-------- Login Checking ----------//
+app.post('/CheckLogin', controller.CheckLogin);
+module.exports = app;
