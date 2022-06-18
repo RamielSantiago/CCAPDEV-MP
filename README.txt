@@ -20,7 +20,7 @@ Content of the .env file:
           dotenv.config();
           const mongoose = require('mongoose');
 
-          const url = process.env.MONGODB_URI;
+          const url = process.env.ONLINE_URL;
         
         If dotenv isn't installed, and there's no .env file:
                 const mongoose = require('mongoose');
