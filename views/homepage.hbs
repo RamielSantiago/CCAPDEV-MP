@@ -6,6 +6,7 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
 	<link rel="stylesheet" type="text/css" href="/css/homepage.css">
 	<script type="text/javascript" src="/js/homepage.js"></script>
+	<script type="text/javascript" src="/js/hp.js"></script>
 </head>
 <body>
 		<div class = "navigation">
@@ -50,6 +51,9 @@
 			<div class = "postNameDiv">
 				<h1 class = "divName"> Posts </h1>
 				<hr class = "hline">
+				{{#each post}}
+					{{> posttemplate username=username postTitle=postTitle desc=desc }}
+				{{/each}}
 			</div>
 		</div>
 	</div>  

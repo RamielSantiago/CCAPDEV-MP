@@ -1,5 +1,6 @@
 const db = require("../models/db.js");
 const Register = require("../models/RegisterModel.js");
+const Post = require("../models/PostModel.js");
 
 const controller = {
 	//-----------------------Handlebars Routing----------------------------//
@@ -34,6 +35,7 @@ const controller = {
     },
 
 	//-----------------------Register Routing----------------------------//
+	
     /*
 		Check if username exists in the database
     */
@@ -56,21 +58,32 @@ const controller = {
     },
 	
 	//-----------------------Post Routing----------------------------//
-	
+	/*
+		Check if there is an account in the Database.
+    */
 	getIndex: function (req, res) {
-		console.log("Hello");
-        db.findMany(User, {}, null, (data) => {
-            res.render("home", { data: data }); 
+		console.log("Hello there");
+        db.findMany(Post, {}, null, (data) => {
+            res.render("homepage", { data: data }); 
         });
     },
 	
-	getCheckUsername: function(req, res) {
-		console.log("Hello2");
-		db.findOne(Register, { username: req.query.q }, null, (data) => {
-			res.send(data);
+	/*
+		Add Post in the Homepage.
+    */
+    getAddPost: function(req, res) {
+		console.log("Hello there2");
+		db.insertOne(Post, req.query, (data) => {
+			res.render('./partials/posttemplate', req.query, (err, html) => {
+                res.send(html);
+            });
 		});
     },
 
+	//-----------------------Login Routing----------------------------//
+	/*
+		Check if there is an account in the Database.
+    */
     CheckLogin: function(req, res){
         db.findOne(Register, { username: req.query.username, password: req.query.password }, null, (data) => {
 			res.send(data);

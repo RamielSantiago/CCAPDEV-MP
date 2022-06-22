@@ -15,4 +15,9 @@ app.get('/addUser', controller.getAdd);
 
 //-------- Login Checking ----------//
 app.post('/CheckLogin', controller.CheckLogin);
+
+//-------- Post Actions ----------//
+app.get('/getIndex', controller.getIndex);
+app.get('/addPost', controller.getAddPost);
+
 module.exports = app;

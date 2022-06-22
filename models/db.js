@@ -2,7 +2,8 @@ const dotenv = require('dotenv');
 dotenv.config();
 const mongoose = require('mongoose');
 
-const url = process.env.ONLINE_URL;
+const online_url = process.env.ONLINE_URL;
+const local_url = process.env.MONGODB_URI;
 
 const options = {
     useUnifiedTopology: true,
@@ -12,12 +13,19 @@ const options = {
 const database = {
 
     connect: function () {
-        mongoose.connect(url, options, function(error) {
+        mongoose.connect(online_url, options, function(error) {
             if(error) throw error;
-            console.log('Connected to: ' + url);
+            console.log('Connected (online) to: ' + online_url);
         });
     },
-
+	/*
+	connect: function () {
+        mongoose.connect(local_url, options, function(error) {
+            if(error) throw error;
+            console.log('Connected (local) to: ' + local_url);
+        });
+    },
+	*/
     insertOne: function(model, doc, callback) {
         model.create(doc, function(error, result) {
             if(error) return callback(false);
