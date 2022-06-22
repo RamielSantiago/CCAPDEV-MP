@@ -4,8 +4,8 @@ const controller = require('../controllers/controller.js');
 const app = express.Router();
 
 //-------- Webpages ----------//
-app.get('/', controller.redirectHP);
-app.get('/homepage', controller.loadHP);
+app.get('/', controller.getIndex);
+app.get('/getIndex', controller.getIndex);
 app.get('/login', controller.loadLogin);
 app.get('/register', controller.loadRegister);
 

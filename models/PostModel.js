@@ -1,12 +1,10 @@
 const mongoose = require('mongoose');
 
 const PostSchema = new mongoose.Schema({
-	/*
-	username: { 
+	postUsername: { 
 		type: String,
 		required: true
 	},
-	*/
 	postTitle: { 
 		type: String,
 		required: true
@@ -15,11 +13,17 @@ const PostSchema = new mongoose.Schema({
 		type: String,
 		required: true
 	},
-	/*
-	img: {
-		type: images
+	postPhoto: {
+		type: String,
+		required: true
 	},
-	*/
+},	{
+		toObject: {
+			virtuals: true,
+		},
+		toJSON: {
+			virtuals: true,
+		}
 });
 
 const PostModel = mongoose.model('Post', PostSchema)

@@ -5,11 +5,11 @@ const Post = require("../models/PostModel.js");
 const controller = {
 	//-----------------------Handlebars Routing----------------------------//
     redirectHP: (req, res) => {
-        res.redirect("/homepage");
+        res.redirect("/getIndex");
     },
 
     loadHP: (req, res) => {
-        res.render("homepage", {
+        res.render("getIndex", {
             title: "Welcome to Socrates",
             customCSS: '<link rel="stylesheet" href="CSS/homepage.css">'
         });
@@ -64,7 +64,12 @@ const controller = {
 	getIndex: function (req, res) {
 		console.log("Hello there");
         db.findMany(Post, {}, null, (data) => {
-            res.render("homepage", { data: data }); 
+			const tempArray = [];
+			if (data.length !== 0){
+				data.forEach(doc => tempArray.push(doc.toObject()));
+			}
+			console.log(tempArray);
+            res.render("homepage", { data: tempArray });
         });
     },
 	

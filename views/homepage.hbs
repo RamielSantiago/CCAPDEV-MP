@@ -17,6 +17,7 @@
 			<div id="proBtn"><a href="profile.html">Profile</a></div>
 			<h1 class = "navigation-title">Socrates</h1>
 		</div>
+		
 		<div class="writebutton">
 			 <button id="popup">Create Post</button>
 		</div>
@@ -28,13 +29,27 @@
 				<h1 class = "divName"> Write Posts </h1>
 				<hr class = "hline">
 			</div>
+			
 			<div class = "container">
 				<form id="postForm">
+					<div class="auxUsername">
+						<h6 class="descName"> Post's Username </h6>
+						<br>
+						<textarea id="postUsername" name="postUsername" placeholder="Enter Post's Username" required></textarea>
+					</div>
+					
 					<div class="auxTitle">
 						<h6 class="descName"> Post's Title </h6>
 						<br>
 						<textarea id="postTitle" name="postTitle" placeholder="Enter Post's Title" required></textarea>
 					</div>
+					
+					<div class="auxPhoto">
+						<h6 class="descName"> Post's Photo </h6>
+						<br>
+						<textarea id="postPhoto" name="postPhoto" placeholder="Enter Post's Photo" required></textarea>
+					</div>
+					
 					<div class="auxInfo">
 						<h6 class="descName"> Post </h6>
 						<br>
@@ -46,15 +61,13 @@
 				</div>
 			</div>
 		</div>
-	<div class="posts">
+	<div id="posts">
 		<div class = "postsContainer">
-			<div class = "postNameDiv">
 				<h1 class = "divName"> Posts </h1>
 				<hr class = "hline">
-				{{#each post}}
-					{{> posttemplate username=username postTitle=postTitle desc=desc }}
+				{{#each data}}
+					{{> posttemplate postUsername=postUsername postTitle=postTitle postPhoto=postPhoto desc=desc }}
 				{{/each}}
-			</div>
 		</div>
 	</div>  
 </body>

@@ -11,13 +11,13 @@ const options = {
 };
 
 const database = {
-
     connect: function () {
         mongoose.connect(online_url, options, function(error) {
             if(error) throw error;
             console.log('Connected (online) to: ' + online_url);
         });
     },
+	
 	/*
 	connect: function () {
         mongoose.connect(local_url, options, function(error) {
@@ -26,6 +26,7 @@ const database = {
         });
     },
 	*/
+	
     insertOne: function(model, doc, callback) {
         model.create(doc, function(error, result) {
             if(error) return callback(false);
