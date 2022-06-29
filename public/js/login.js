@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var pass = document.querySelector('#password');
         var url = `/CheckLogin?username=${user.value}&password=${pass.value}`;
         var auth = `/AllowLogin?username=${user.value}`;
+        var sesh = `/createSession?username=${user.value}`;
         if(user.value != "" && pass.value != ""){
             $.post(url, (data, status, xhr) => {
                 if(status == "success"){
@@ -15,6 +16,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         errorText.innerHTML = "Account with this username/password does not exist";
                     } else {
                         alert("Logged in");
+                        $.get(sesh, (data, status, xhr) => {
+                            if(status == 'success'){
+                                console.log("Session Created");
+                            } else {
+                                console.log("An Error Occurred");
+                            }
+                        });
                         $.get(auth, (data, status, xhr) => {
                             if(status == 'success'){
                                 window.location.href = '/';

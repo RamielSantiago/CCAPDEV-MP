@@ -11,7 +11,7 @@
 <body>
 		<div class = "navigation">
 			<span id="LR">			
-				<a href="/Logout">Logout</a>
+				<a href="/endSession">Logout</a>
 			</span>
 			<div id="proBtn"><a href="/profile">Profile</a></div>
 			<h1 class = "navigation-title">Socrates</h1>
@@ -31,27 +31,18 @@
 			
 			<div class = "container">
 				<form id="postForm">
-					<div class="auxUsername">
-						<h6 class="descName"> Post's Username </h6>
-						<br>
-						<textarea id="postUsername" name="postUsername" placeholder="Enter Post's Username" required></textarea>
-					</div>
-					
 					<div class="auxTitle">
 						<h6 class="descName"> Post's Title </h6>
-						<br>
 						<textarea id="postTitle" name="postTitle" placeholder="Enter Post's Title" required></textarea>
 					</div>
 					
 					<div class="auxPhoto">
 						<h6 class="descName"> Post's Photo </h6>
-						<br>
-						<textarea id="postPhoto" name="postPhoto" placeholder="Enter Post's Photo" required></textarea>
+						<textarea id="postPhoto" name="postPhoto" placeholder="Enter Photo URL" required></textarea>
 					</div>
 					
 					<div class="auxInfo">
 						<h6 class="descName"> Post </h6>
-						<br>
 						<textarea rows="100" cols = "40" id="desc" name ="desc" placeholder="Enter your post here" required></textarea>
 					</div>
 				</form>

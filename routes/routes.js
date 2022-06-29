@@ -10,7 +10,7 @@ app.get('/', controller.getIndex);
 app.get('/getIndex', controller.getIndex);
 app.get('/login', controller.loadLogin);
 app.get('/register', controller.loadRegister);
-
+app.get('/profile', controller.loadProfile);
 //-------- Register Actions ---------//
 app.get('/getCheckUsername', controller.getCheckUsername);
 app.get('/addUser', controller.getAdd);
@@ -23,5 +23,5 @@ app.get('/Logout', controller.Logout);
 //-------- Post Actions ----------//
 app.get('/getIndex', controller.getIndex);
 app.get('/addPost', controller.getAddPost);
-
+app.get('getUsername', controller.getUsername);
 module.exports = app;

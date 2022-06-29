@@ -79,8 +79,12 @@ const controller = {
 		Add Post in the Homepage.
     */
     getAddPost: function(req, res) {
-		db.insertOne(Post, req.query, (data) => {
-			res.render('./partials/posttemplate', req.query, (err, html) => {
+        var query = {postUsername: Username,
+                     postTitle: req.query.postTitle,
+                     desc: req.query.desc,
+                     postPhoto: req.query.postPhoto};
+		db.insertOne(Post, query, (data) => {
+			res.render('./partials/posttemplate', query, (err, html) => {
                 res.send(html);
             });
 		});
@@ -95,7 +99,12 @@ const controller = {
 		    res.send(data);
 	  	});
     },
-
+    getUsername: function(req, res){
+        res.send(Username);
+    },
+    /*
+        Stores the username used in the login for future use.
+    */ 
     AllowLogin: function(req, res) {
         Username = req.query.username;
         console.log(Username);
@@ -103,6 +112,9 @@ const controller = {
         res.sendStatus(200);
     },
 
+    /*
+        Resets values that indicate a user is logged in.
+    */ 
     Logout: function(req, res){
         Username = null;
         loggedin = false;
