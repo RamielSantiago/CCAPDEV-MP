@@ -240,3 +240,12 @@ span.upvote:hover, span.downvote:hover{
 	margin-bottom: 15px;
 	font-size: 15px;
 }
+
+div.aboutContainer {
+	text-align: center;
+}
+
+dl.about {
+	display: inline-block;
+  	text-align: left;
+}
