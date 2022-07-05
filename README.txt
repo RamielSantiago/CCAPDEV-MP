@@ -14,9 +14,9 @@ How to run this application locally:
        
        3. Once the NPM packages have been installed, create a file named ".env" and copy and paste the following lines into the file:
            
-                                    MONGODB_URI=mongodb://localhost:27017/CCAPDEV-PROJECT
-                                    ONLINE_URL=mongodb+srv://Admin:C0tDKeQ0wr9XXSxy@ccapdev.zzznx.mongodb.net/CCAPDEV?retryWrites=true&w=majority
-                                    SERVER_PORT=3000
+                      MONGODB_URI=mongodb://localhost:27017/CCAPDEV-PROJECT
+                      ONLINE_URL=mongodb+srv://Admin:C0tDKeQ0wr9XXSxy@ccapdev.zzznx.mongodb.net/CCAPDEV?retryWrites=true&w=majority
+                      SERVER_PORT=3000
                                 
           Then, open the db.js file in the models folder and choose the database type to use for your copy of the application and choose between the variables "online_url" and "local_url". As the names suggest, the choice is between a local and online MongoDB database. If you choose to use the online database, then leave it as is. Otherwise, comment out the mongoose.connect function that contains the variable "online_url"by enclosing it in between /* and */ in that order similar to the commented out code directly below it. Afterwards, delete the /* and */ that encloses the mongoose.connect function that has the"local_url" variable.
           
