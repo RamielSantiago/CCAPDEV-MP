@@ -28,14 +28,6 @@ app.set("views", "./views");
 //Database Connection
 db.connect();
 
-// 404 not found page
-app.use((req, res, err) => {
-    res.render("404", {
-        title: "404 not found",
-        customCSS1: '<link rel="stylesheet" type="text/css" href="/css/404.css">',
-    });
-});
-
 //------- Session Settings -------//
 const store = new MongoDBSession({
     uri : 'mongodb+srv://Admin:C0tDKeQ0wr9XXSxy@ccapdev.zzznx.mongodb.net/CCAPDEV?retryWrites=true&w=majority',
@@ -64,9 +56,20 @@ app.get('/createSession', (req, res) => {
 });
 
 app.get('/endSession', (req, res) => {
-        delete req.session.variable;
-        res.redirect('/Logout');
+        req.session = null;
+        res.session.destroy((err) => {
+            res.redirect('/Logout');
+        });
 });
+
+// 404 not found page
+app.use((req, res, err) => {
+    res.render("404", {
+        title: "404 not found",
+        customCSS1: '<link rel="stylesheet" type="text/css" href="/css/404.css">',
+    });
+});
+
 //Sets the port to listen to
 app.listen(port, host, () => {
     console.log("Currently listening at Port " + port);
