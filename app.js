@@ -69,7 +69,6 @@ app.get('/endSession', (req, res) => {
             if(err){
                 res.sendStatus(500);
             } else {
-                req.session = null;
                 res.redirect('/Logout');
             }
         });
