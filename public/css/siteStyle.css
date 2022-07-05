@@ -25,6 +25,13 @@ div.navigation {
     font-size: 25px;
 	font-family: cursive;
 }
+#aboutBtn{
+    float:right;
+    padding-top: 15px;
+    margin-right: 15px;
+    font-size: 25px;
+	font-family: cursive;
+}
 #LR{
     float: left;
     padding-top: 15px;
@@ -32,11 +39,11 @@ div.navigation {
     font-size: 25px;
 	font-family: cursive;
 }
-#LR a, #proBtn a{
+#LR a, #proBtn a, #aboutBtn a{
     text-decoration: none;
     color: darkcyan;
 }
-#LR a:hover{
+#LR a:hover, #proBtn a:hover, #aboutBtn a:hover{
     transform: scale(1.1);
     text-decoration: none;
     color:white;

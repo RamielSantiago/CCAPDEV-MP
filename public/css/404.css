@@ -1,0 +1,32 @@
+.error-message {
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	text-align: center;
+}
+
+.error-message h2 {
+	font-size: 40px;
+	margin: 0;
+	font-weight: 900;
+}
+
+.error-message h1 {
+	font-size: 160px;
+	margin: 0;
+	font-weight: 900;
+	letter-spacing: 15px;
+}
+
+.error-message h6 {
+	text-decoration: none;
+	background: #F08080;
+	color: #fff;
+	padding: 12px 24px;
+	display: inline-block;
+	border-radius: 25px;
+	font-size: 20px;
+	text-transform: uppercase;
+	transition: 0.4s;
+}

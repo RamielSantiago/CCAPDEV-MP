@@ -30,4 +30,14 @@ likeButtons.forEach(function(element,index) {
 	element.addEventListener("click", (evt) => liked(element, index));
 });
 
+var commentButtons = [].slice.call(document.getElementsByClassName("comment"));
+
+commentButtons.forEach(function(element,index) { 
+	element.addEventListener("click", (evt) => document.querySelector(".writeComment").classList.add("active"));
+});
+
+document.getElementById("closeBtnComment").addEventListener("click", function(){
+    document.querySelector(".writeComment").classList.remove("active");
+});
+
 });

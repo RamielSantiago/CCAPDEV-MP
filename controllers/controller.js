@@ -25,14 +25,27 @@ const controller = {
 				}
 				
 				if(loggedin == false && Username == null){
-					res.render("homepage", { data: tempArray, comment: tempArrays });
+					res.render("homepage", {                         
+                        title: 'Homepage',
+                        customCSS1: '<link rel="stylesheet" type="text/css" href="/css/homepage.css">',
+                        customJS1: '<script type="text/javascript" src="/js/homepage.js"></script>',
+                        customJS2: '<script type="text/javascript" src="/js/hp.js"></script>',
+                        data: tempArray, 
+                        comment: tempArrays 
+                    });
 				} else {
-					res.render("homepage2", { data: tempArray, comment: tempArrays });
+					res.render("homepage2", {
+                        title: 'Homepage',
+                        customJS1: '<script type="text/javascript" src="/js/homepage.js"></script>',
+                        customCSS1: '<link rel="stylesheet" type="text/css" href="/css/homepage.css">',
+                        customJS2: '<script type="text/javascript" src="/js/hp.js"></script>',
+                        data: tempArray, 
+                        comment: tempArrays 
+                    });
 				}
 			});
         });
     },
-	
     redirectHP: (req, res) => {
         res.redirect("/getIndex");
     },
@@ -40,14 +53,16 @@ const controller = {
     loadLogin: (req, res) => {
         res.render("login", {
             title: "Login to Socrates",
-            customCSS: '<link rel="stylesheet" href="CSS/login.css">'
+            customCSS1: '<link rel="stylesheet" href="../css/login.css">',
+            customJS1: '<script type="text/javascript" src="../js/login.js"></script>'
         });
     },
 
     loadRegister: function(req, res){
         res.render("register", {
             title: "Register Socrates Account",
-            customCSS: '<link rel="stylesheet" href="CSS/register.css">'
+            customCSS1: '<link rel="stylesheet" href="/css/register.css">',
+            customJS1: '<script type="text/javascript" src="/js/register.js"></script>'
         });
     },
 
@@ -66,13 +81,29 @@ const controller = {
 				}
 				
 				res.render("profiles", {
+                    title: 'Profile Page',
+                    customCSS1: '<link rel="stylesheet" type="text/css" href="/css/homepage.css">',
+                    customCSS2: '<link rel="stylesheet" href="../css/profile.css">',
 					user: tempArrays,
 					data: tempArray
 				});
 			});
         });
     },
-	
+	loadAbout: function(req, res){
+        if(loggedin == false){
+            res.render("about", {
+                title: "About Socrates",
+                customCSS1: '<link rel="stylesheet" href="../css/about.css">'
+            });
+        } else {
+            res.render("about2", {
+                title: "About Socrates",
+                customCSS1: '<link rel="stylesheet" href="../css/about.css">'
+            });
+        }
+    },
+
     getFavicon: function (req, res) {
         res.status(204);
     },

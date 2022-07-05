@@ -1,9 +1,9 @@
-.container {
+.containerProfile {
     border-radius: 25px;
     background-color: #989898ce;
     padding: 25px;
-    width: 350px; /*25%*/
-    height: 550px;
+    width: 500px; /*25%*/
+    height: flex;
 	margin: 0 auto;
 	margin-top: 25px;
     text-align: center;
@@ -16,7 +16,7 @@ h1 {
 	color: white;
 }
 
-span {
+.profContents {
 	font-family: cursive;
 	font-size: 25px;
 	color: white;

@@ -3,6 +3,7 @@
 	<head> 
 		<title>Profile Page</title>
 		<link rel="stylesheet" href="../CSS/siteStyle.css">
+		<link rel="stylesheet" type="text/css" href="/css/homepage.css">
 		<link rel="stylesheet" href="../CSS/profile.css">
 	</head>
 	<body>
@@ -12,18 +13,21 @@
 			</span>
 			<h1 class = "navigation-title"><a href = "/">Socrates</a></h1>
 		</div>
-		<div class = "container">
-            <h1> Profile </h1>
-			<div class = "contents">
-				<span> First Name: {{FirstName}}</span>
-				<br>
-    			<span> Last Name: {{LastName}}</span>
-				<br>
-				<span> Email: {{Email}}</span>
-				<br>
-				<span> Username: {{Username}}</span>
-				<br>
-			</div>
+		<div class = "containerProfile">
+            <h1> User's Profile </h1>
+			{{#each user}}
+				{{> profiletemplate firstname=firstname lastname=lastname email=email username=username password1=password1 password2=password2 }}
+			{{/each}}
 		</div>
+		<div id="posts">
+			<div class = "postsContainer">
+				<h1 class = "divName"> User's Posts </h1>
+				<hr class = "hline">
+				{{#each data}}
+					{{> posttemplate postUsername=postUsername postTitle=postTitle postPhoto=postPhoto desc=desc }}
+				{{/each}}
+				
+			</div>
+		</div> 
 	</body>
 </html>
