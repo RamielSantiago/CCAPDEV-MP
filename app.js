@@ -62,5 +62,5 @@ app.get('/endSession', (req, res) => {
 
 //Sets the port to listen to
 app.listen(port, () => {
-    console.log("Currently listening at Port " + process.env.SERVER_PORT);
+    console.log("Currently listening at Port " + port);
 });
