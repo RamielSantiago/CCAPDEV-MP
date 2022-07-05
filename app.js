@@ -64,10 +64,8 @@ app.get('/createSession', (req, res) => {
 });
 
 app.get('/endSession', (req, res) => {
-    req.session.destroy((err) => {
         req.session = null;
         res.redirect('/Logout');
-    });
 });
 //Sets the port to listen to
 app.listen(port, host, () => {
