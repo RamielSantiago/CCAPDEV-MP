@@ -1,11 +1,38 @@
 const db = require("../models/db.js");
 const Register = require("../models/RegisterModel.js");
 const Post = require("../models/PostModel.js");
+const Comment = require("../models/CommentModel.js");
+const bcrypt = require('bcrypt');
 var Username = null;
 var loggedin = false;
 
 const controller = {
 	//-----------------------Handlebars Routing----------------------------//
+	/*
+		Check if there is an account in the Database.
+    */
+	getIndex: function (req, res) {
+        db.findMany(Post, {}, null, (data) => {
+			db.findMany(Comment, {}, null, (comment) => {
+				const tempArrays = [];
+				const tempArray = [];
+				
+				if (comment.length !== 0){
+					comment.forEach(doc => tempArrays.push(doc.toObject()));
+				}
+				if (data.length !== 0){
+					data.forEach(doc => tempArray.push(doc.toObject()));
+				}
+				
+				if(loggedin == false && Username == null){
+					res.render("homepage", { data: tempArray, comment: tempArrays });
+				} else {
+					res.render("homepage2", { data: tempArray, comment: tempArrays });
+				}
+			});
+        });
+    },
+	
     redirectHP: (req, res) => {
         res.redirect("/getIndex");
     },
@@ -25,11 +52,24 @@ const controller = {
     },
 
     loadProfile: function(req, res) {
-        db.findOne(Register, { username: Username }, null, (data) =>{
-           /* res.render("profiles", {
-                title: "Profile Page",
-                customCSS: '<link rel="stylesheet" href="../CSS/profile.css">'
-            });*/
+        db.findMany(Register, { username: Username }, null, (user) =>{
+			db.findMany(Post, { postUsername: Username }, null, (data) => {
+				const tempArray = [];
+				const tempArrays = [];
+				
+				if (user.length !== 0){
+					user.forEach(doc => tempArrays.push(doc.toObject()));
+				}
+				
+				if (data.length !== 0){
+					data.forEach(doc => tempArray.push(doc.toObject()));
+				}
+				
+				res.render("profiles", {
+					user: tempArrays,
+					data: tempArray
+				});
+			});
         });
     },
 	
@@ -38,7 +78,6 @@ const controller = {
     },
 
 	//-----------------------Register Routing----------------------------//
-	
     /*
 		Check if username exists in the database
     */
@@ -52,29 +91,17 @@ const controller = {
 		Add account in the Database
     */
     getAdd: function(req, res) {
-		db.insertOne(Register, req.query, (data) => {
-			console.log("User Added");
-		});
-    },
-	
-	//-----------------------Post Routing----------------------------//
-	/*
-		Check if there is an account in the Database.
-    */
-	getIndex: function (req, res) {
-        db.findMany(Post, {}, null, (data) => {
-			const tempArray = [];
-			if (data.length !== 0){
-				data.forEach(doc => tempArray.push(doc.toObject()));
-			}
-            if(loggedin == false && Username == null){
-                res.render("homepage", { data: tempArray });
-            } else {
-                res.render("homepage2", { data: tempArray });
-            }
+        const saltRounds = 10;
+        bcrypt.hash(req.query.password1, saltRounds, (err, hash) =>{
+            bcrypt.hash(req.query.password2, saltRounds, (err, hash) =>{
+                db.insertOne(Register, req.query, (data) => {
+                    console.log("User Added");
+               });
+            });
         });
     },
 	
+	//-----------------------Post Routing----------------------------//
 	/*
 		Add Post in the Homepage.
     */
@@ -89,6 +116,33 @@ const controller = {
             });
 		});
     },
+	
+	//-----------------------Comment Routing----------------------------//
+	/*
+		Check if Username has posted anything.
+    */
+	getCheckPostUsername: function(req, res) {
+		db.findOne(Post, { postUsername: req.query.q }, null, (data) => {
+			console.log("HELLO");
+			res.send(data);
+		});
+    },
+	
+	/*
+		Add Comment in the Homepage.
+    */
+	getAddComment: function(req, res) {
+        var query = {
+			commentUsername: Username,
+			commenttedUsername: req.query.commenttedUsername,
+            postComment: req.query.postComment
+		};
+		db.insertOne(Comment, query, (data) => {
+			res.render('./partials/commenttemplate', query, (err, html) => {
+                res.send(html);
+            });
+		});
+    },
 
 	//-----------------------Login Routing----------------------------//
 	/*
@@ -96,7 +150,7 @@ const controller = {
     */
     CheckLogin: function(req, res){
         db.findOne(Register, { username: req.query.username, password: req.query.password }, null, (data) => {
-		    res.send(data);
+            res.send(data);
 	  	});
     },
     getUsername: function(req, res){
@@ -119,7 +173,7 @@ const controller = {
         Username = null;
         loggedin = false;
         res.redirect('/');
-    }
+    },
 };
 
 module.exports = controller;
