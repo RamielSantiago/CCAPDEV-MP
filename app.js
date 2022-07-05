@@ -68,7 +68,7 @@ app.get('/endSession', (req, res) => {
         // delete session object
         req.session.destroy(function(err) {
             if(err) {
-                return next(err);
+                console.log(err);
             } else {
                 req.session = null;
                 console.log("logout successful");
