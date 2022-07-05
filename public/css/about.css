@@ -1,5 +1,18 @@
 #pagecontent{
     max-width: 500px;
     margin: auto;
+	padding: 20px 30px;
+	background: #fff;
+	border-radius: 10px;
 }
-
+.git a{
+    text-decoration: none;
+    color: darkcyan;
+    margin-left: 35%;
+    font-size: 20px;
+}
+.git a:hover{
+    transform: scale(1.1);
+    text-decoration: none;
+    color:purple;
+}
