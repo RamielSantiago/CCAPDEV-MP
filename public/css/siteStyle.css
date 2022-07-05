@@ -51,7 +51,9 @@ div.navigation {
 .navigation-title {
 	font-size: 45px;
 	font-family: cursive;
+   	margin: 0 auto;
+   	text-decoration: none;
+}
+.navigation-title a{
 	color: white;
-    margin: 0 auto;
-    text-decoration: none;
 }
