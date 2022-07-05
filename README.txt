@@ -6,8 +6,8 @@ About this Application:
 How to run this application locally:
        
        1. Download the Application in this main branch, either through ZIP file or a git clone 
-                1.a If you downloaded the files through a ZIP file, simplt extract the files in the directory you want to use the app in.
-                1.b If want to download through a git clone, open your Command Line (CMD) by typing cmd in either the address bar of your Windows Explorer, or the search bar of your OS and hit enter.
+          1.a If you downloaded the files through a ZIP file, simplt extract the files in the directory you want to use the app in.
+          1.b If want to download through a git clone, open your Command Line (CMD) by typing cmd in either the address bar of your Windows Explorer, or the search bar of your OS and hit enter.
                 Then, enter the directory or folder that the git clone will be downloaded to, and simply enter this line and wait for the cloning process to complete:
                 
                                         git clone https://github.com/RamielSantiago/CCAPDEV-MP.git
