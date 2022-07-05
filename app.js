@@ -11,7 +11,7 @@ const routes = require('./routes/routes.js');
 const db = require('./models/db.js');
 
 const app = express();
-const port = 3000; //Port number
+const port = process.env.PORT || 3000; //Port number
 
 //Sets app to use static files for displays
 app.use(express.static(__dirname + "/public"));
@@ -61,6 +61,6 @@ app.get('/endSession', (req, res) => {
 });
 
 //Sets the port to listen to
-app.listen(port, () => {
+app.listen(port, host, () => {
     console.log("Currently listening at Port " + port);
 });
