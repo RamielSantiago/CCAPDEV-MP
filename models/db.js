@@ -11,7 +11,7 @@ const options = {
 
 const database = {
     connect: function () {
-        mongoose.connect(online_url, options, function(error) {
+        mongoose.connect("mongodb+srv://Admin:C0tDKeQ0wr9XXSxy@ccapdev.zzznx.mongodb.net/CCAPDEV?retryWrites=true&w=majority", options, function(error) {
             if(error) throw error;
             console.log('Connected (online) to: ' + online_url);
         });
