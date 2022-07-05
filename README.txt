@@ -1,10 +1,8 @@
-To Do List:
+About this Application:
+    This application was developed by Noel Angelo Pastrana, Jairus Ramiel C. Santiago, and Ramon Antonio Mapua of CCAPDEV S15 and was developed using NodeJS and 
+    the Express Framework for NodeJS. The database Object Data Modelling (ODM) library used to implement MongoDB for data storage and manipulation was Mongoose.
 
- - Error 404 Page
- - Sessions (Done)
- - Post should not require user to input their username (Done)
- - Specify Photo URL is required in posts (Done)
- - Password hashing/authentication
- - Profiles
- - Upvotes/Downvotes/Buttons on posts
- - Comments
+
+How to run this application locally:
+       
+       1. Download the Application in this main branch, with through ZIP file or a git clone 
