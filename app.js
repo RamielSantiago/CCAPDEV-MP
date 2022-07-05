@@ -11,7 +11,7 @@ const routes = require('./routes/routes.js');
 const db = require('./models/db.js');
 
 const app = express();
-const port = 5000; //Port number
+const port = 3000; //Port number
 
 //Sets app to use static files for displays
 app.use(express.static(__dirname + "/public"));
