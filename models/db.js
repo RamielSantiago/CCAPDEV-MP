@@ -1,7 +1,7 @@
 const dotenv = require('dotenv');
 dotenv.config();
 const mongoose = require('mongoose');
-const online_url = process.env.ONLINE_URL;
+const online_url = 'mongodb+srv://Admin:C0tDKeQ0wr9XXSxy@ccapdev.zzznx.mongodb.net/CCAPDEV?retryWrites=true&w=majority';
 const local_url = process.env.MONGODB_URI;
 
 const options = {
@@ -11,7 +11,7 @@ const options = {
 
 const database = {
     connect: function () {
-        mongoose.connect("mongodb+srv://Admin:C0tDKeQ0wr9XXSxy@ccapdev.zzznx.mongodb.net/CCAPDEV?retryWrites=true&w=majority", options, function(error) {
+        mongoose.connect(online_url, options, function(error) {
             if(error) throw error;
             console.log('Connected (online) to: ' + online_url);
         });
