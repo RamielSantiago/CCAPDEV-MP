@@ -31,7 +31,8 @@ db.connect();
 // 404 not found page
 app.use((req, res, err) => {
     res.render("404", {
-        title: "404 not found"
+        title: "404 not found",
+        customCSS: '<link rel="stylesheet" href="/css/404.css">'
     });
 });
 
