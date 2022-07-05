@@ -32,7 +32,7 @@ db.connect();
 app.use((req, res, err) => {
     res.render("404", {
         title: "404 not found",
-        customCSS: '<link rel="stylesheet" href="/css/404.css">'
+        customCSS1: '<link rel="stylesheet" type="text/css" href="/css/404.css">',
     });
 });
 
