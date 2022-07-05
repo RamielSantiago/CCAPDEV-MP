@@ -11,6 +11,7 @@ const routes = require('./routes/routes.js');
 const db = require('./models/db.js');
 
 const app = express();
+const host = '0.0.0.0';
 const port = process.env.PORT || 3000; //Port number
 
 //Sets app to use static files for displays
