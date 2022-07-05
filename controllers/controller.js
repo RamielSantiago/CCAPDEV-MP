@@ -204,7 +204,7 @@ const controller = {
         Username = null;
         loggedin = false;
 	console.log('Session Ended');
-        res.redirect('/');
+        res.redirect('/endSession');
     },
 };
 
