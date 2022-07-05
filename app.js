@@ -64,7 +64,7 @@ app.get('/createSession', (req, res) => {
 });
 
 app.get('/endSession', (req, res) => {
-        req.session = null;
+        delete req.session.variable;
         res.redirect('/Logout');
 });
 //Sets the port to listen to
