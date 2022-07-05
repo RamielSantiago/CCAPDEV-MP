@@ -64,10 +64,18 @@ app.get('/createSession', (req, res) => {
 });
 
 app.get('/endSession', (req, res) => {
-    req.session.destroy((err) => {
-        req.session = null;
-        res.redirect('/Logout');
-    });
+    if (req.session) {
+        // delete session object
+        req.session.destroy(function(err) {
+            if(err) {
+                return next(err);
+            } else {
+                req.session = null;
+                console.log("logout successful");
+                return res.redirect('/Logout');
+            }
+        });
+    }  
 });
 
 //Sets the port to listen to
