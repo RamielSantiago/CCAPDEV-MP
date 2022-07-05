@@ -28,6 +28,13 @@ app.set("views", "./views");
 //Database Connection
 db.connect();
 
+// 404 not found page
+app.use((req, res, err) => {
+    res.render("404", {
+        title: "404 not found"
+    });
+});
+
 //------- Session Settings -------//
 const store = new MongoDBSession({
     uri : 'mongodb+srv://Admin:C0tDKeQ0wr9XXSxy@ccapdev.zzznx.mongodb.net/CCAPDEV?retryWrites=true&w=majority',
