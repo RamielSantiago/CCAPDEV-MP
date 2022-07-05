@@ -65,7 +65,7 @@ app.get('/createSession', (req, res) => {
 });
 
 app.get('/endSession', (req, res) => {
-        res.session.destroy((err) => {
+        req.session.destroy((err) => {
             if(err){
                 res.redirect('/Logout');
             } else {
