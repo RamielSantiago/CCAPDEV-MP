@@ -28,13 +28,13 @@ app.set("views", "./views");
 //Database Connection
 db.connect();
 
-/*404 not found page
+//404 not found page
 app.use((req, res) => {
     res.status(404).render("404", {
         title: "404 not found",
         customCSS1: '<link rel="stylesheet" type="text/css" href="/css/404.css">',
     });
-});*/
+});
 
 
 //------- Session Settings -------//
@@ -69,7 +69,7 @@ app.get('/endSession', (req, res) => {
             if(err){
                 res.sendStatus(500);
             } else {
-                res.redirect('/Logout');
+                res.redirect('/');
             }
         });
 });
