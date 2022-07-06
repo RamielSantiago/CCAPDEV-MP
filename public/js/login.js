@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var pass = document.querySelector('#password');
         var url = `/CheckLogin?username=${user.value}&password=${pass.value}`;
         var auth = `/AllowLogin?username=${user.value}`;
-        var sesh = `/createSession?username=${user.value}`;
+        var sesh = `/createSession?username=${user.value}&password=${pass.value}`;
         if(user.value != "" && pass.value != ""){
             $.post(url, (data, status, xhr) => {
                 if(status == "success"){

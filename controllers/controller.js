@@ -203,8 +203,8 @@ const controller = {
     Logout: function(req, res){
         Username = null;
         loggedin = false;
-	console.log('Session Ended');
-        res.redirect('/endSession');
+	    console.log('Session Ended');
+        res.redirect('/');
     },
 };
 
